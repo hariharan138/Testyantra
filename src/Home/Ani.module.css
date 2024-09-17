@@ -1,0 +1,72 @@
+
+.ani {
+    /* border: 8px solid red; */
+    position: relative;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    /* height: 500px; */
+    /* background: url("https://i.postimg.cc/c1Q3njM0/bg2.jpg"); */
+    /* background-size: cover; */
+    animation: animateBg 50s linear infinite;
+    /* overflow: unset; */
+}
+
+@keyframes animateBg {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+
+.shoot {
+    position: absolute;
+    top: -4px;
+    
+    background: #fff;
+    /* background:black; */
+    animation: animate 3s linear infinite;
+}
+
+.shoot::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100px;
+    background: linear-gradient(180deg,#fff, transparent);
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 1.2;
+    }
+    70% {
+        opacity: 1.2;
+    }
+    100% {
+        transform: translateY(650px);
+        opacity: 1.2;
+    }
+}
+
+/* Adjust the positions of each shooting star */
+.shoot:nth-child(1) {
+    left: 28.1%; /* First star at 25% from the left */
+    animation-delay: 0s;
+    animation-duration: 2.5s;
+}
+.shoot:nth-child(2) {
+    left: 49.7%; /* Second star at 50% from the left (center) */
+    animation-delay: 1s;
+    animation-duration: 2.5s;
+}
+.shoot:nth-child(3) {
+    left: 69.5%; /* Third star at 75% from the left */
+    animation-delay: 2s;
+    animation-duration: 2.5s;
+}
